@@ -260,6 +260,11 @@ body{
     max-width: 75%;
   }
 
+  .navbar-brand img{
+  height: 40px;
+  width: auto;
+}
+
   /* MOBILE MENU */
 
   .navbar-collapse{
@@ -323,6 +328,11 @@ body{
 
     max-width: 70%;
   }
+  
+  .navbar-brand img{
+  height: 35px;
+  width: auto;
+}
 
   /* SMALLER LINKS */
 
