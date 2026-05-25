@@ -25,6 +25,7 @@ body{
 .custom-navbar{
   background: rgba(255,255,255,0.95);
   backdrop-filter: blur(10px);
+  position: fixed;
 
   padding: 5px 0;
 
