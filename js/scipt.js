@@ -7,6 +7,8 @@ const carousel = new bootstrap.Carousel(heroCarousel, {
 
 });
 
+
+
 /* =========================
    AUTO SHRINK NAVBAR
 ========================= */
@@ -74,6 +76,8 @@ navLinks.forEach(link => {
   });
 
 });
+
+
 
 
 /* =========================
@@ -200,19 +204,16 @@ document.getElementById("contactForm");
 const result =
 document.getElementById("result");
 
-const submitBtn = form.querySelector('button[type="submit"]');
-
 
 
 form.addEventListener("submit", async function (e) {
 
   e.preventDefault();
+  result.style.display="block";
+  result.innerHTML="Sending...";
 
   const formData = new FormData(form);
     formData.append("access_key", "6ba90db1-22f1-4084-9d3d-dc5bf18814f7");
-
-  result.innerHTML =
-  "Sending...";
 
 
     const originalText = submitBtn.textContent;
@@ -229,100 +230,18 @@ form.addEventListener("submit", async function (e) {
         const data = await response.json();
 
         if (response.ok) {
-            alert("Success! Your message has been sent.");
+            result.innerHTML="Message Sent Successfully 🌸 Thank You";
             form.reset();
         } else {
-            alert("Error: " + data.message);
+            result.innerHTML= "ERROR !!" + data.message;
         }
 
     } catch (error) {
         alert("Something went wrong. Please try again.");
-    } finally {
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-    }
+    } 
+    
 });
 
-
-
-
-
-
-
-
-const form =
-document.getElementById('contactForm');
-
-const message =
-document.getElementById('result');
-
-form.addEventListener('submit', async function(e){
-
-  e.preventDefault();
-
-  /* CHECK REQUIRED */
-
-  const inputs =
-  form.querySelectorAll('[required]');
-
-  let valid = true;
-
-  inputs.forEach(input => {
-
-    if(input.value.trim() === ''){
-
-      input.style.border =
-      '2px solid #ff4d4d';
-
-      valid = false;
-
-    }
-
-  });
-
-  if(!valid){
-
-    message.style.display = 'block';
-
-    message.innerHTML =
-    'Please fill all required fields';
-
-    return;
-  }
-
-  /* SEND FORM */
-
-  const formData =
-  new FormData(form);
-
-  try{
-
-    await fetch(form.action, {
-
-      method: 'POST',
-
-      body: formData
-
-    });
-
-    message.style.display = 'block';
-
-    message.innerHTML =
-    'Message Sent Successfully 🌸 Thank You';
-
-    form.reset();
-
-  }
-
-  catch(error){
-
-    message.style.display = 'block';
-
-    message.innerHTML =
-    'Something went wrong. Please try again.';
-  }
-
-});
 
 
 
