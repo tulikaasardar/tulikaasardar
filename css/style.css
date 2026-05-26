@@ -8,6 +8,7 @@
 body{
   font-family: 'Poppins', sans-serif;
   background: var(--light);
+  padding-top: 90px;
 
   overflow-x: hidden;
   background-color: #222;
@@ -364,9 +365,21 @@ body{
 
 body{
 
+  padding-top: 65px;
+
   overflow-x: hidden;
 }
 
+/* MOBILE BODY */
+
+@media(max-width:576px){
+
+  body{
+
+    padding-top: 50px;
+  }
+
+}
 
 
 
