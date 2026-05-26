@@ -244,7 +244,7 @@ const form =
 document.getElementById('contactForm');
 
 const message =
-document.getElementById('formMessage');
+document.getElementById('result');
 
 form.addEventListener('submit', async function(e){
 
