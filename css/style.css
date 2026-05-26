@@ -57,8 +57,16 @@ body{
 
   transition: 0.4s;
 
-  padding: 10px 0;
+  padding: 5px 0;
 }
+
+
+.navbar-brand{
+
+    font-size: 26px;
+
+    max-width: 80%;
+  }
 
 /* NAVBAR CONTAINER */
 
@@ -74,7 +82,7 @@ body{
 /* LOGO */
 
 .navbar-brand img{
-  height: 50px;
+  height: 45px;
   width: auto;
 }
 
@@ -248,7 +256,7 @@ body{
 
   #mainNavbar{
 
-    padding: 10px 0;
+    padding: 5px 0;
   }
 
   /* SMALLER LOGO */
@@ -317,7 +325,7 @@ body{
 
   #mainNavbar{
 
-    padding: 8px 0;
+    padding: 5px 0;
   }
 
   /* EXTRA SMALL LOGO */
@@ -1910,7 +1918,35 @@ html{
 
 
 body{
-    padding-top: 90px;
+    padding-top: 68px;
+}
+
+
+@media(max-width:992px){
+
+  body{
+
+    padding-top: 65px;
+  }
+
+}
+
+@media(max-width:768px){
+
+  body{
+
+    padding-top: 60px;
+  }
+
+}
+
+@media(max-width:576px){
+
+  body{
+
+    padding-top: 56px;
+  }
+
 }
 
 /* =========================
@@ -1923,7 +1959,7 @@ body{
 
   background: #0c4b45;
 
-  padding: 20px 0;
+  padding: 15px 0;
 }
 
 .header-content{
@@ -1941,9 +1977,9 @@ body{
 
   color: white;
 
-  font-size: 32px;
+  font-size: 40px;
 
-  font-weight: 700;
+  font-weight: 500;
 
   letter-spacing: 1px;
 }
@@ -1951,14 +1987,14 @@ body{
 
 
 .tuli-top-img img{
-    height: 90px;
+    height: 100px;
 }
 
 /* TOP IPHM LOGO */
 
 .iphm-top-logo img{
 
-  height: 70px;
+  height: 80px;
 }
 
 
