@@ -161,53 +161,6 @@ scrollTopBtn.addEventListener('click', () => {
 
 });
 
-const form =
-document.getElementById("contactForm");
-
-const result =
-document.getElementById("result");
-
-form.addEventListener("submit", async function (e) {
-
-  e.preventDefault();
-
-  const formData =
-  new FormData(form);
-
-  result.innerHTML =
-  "Sending...";
-
-  const response =
-  await fetch(
-  "https://api.web3forms.com/submit",
-  {
-
-    method: "POST",
-
-    body: formData
-
-  });
-
-  const data =
-  await response.json();
-
-  if (data.success) {
-
-    result.innerHTML =
-    "Message Sent Successfully 🌸";
-
-    form.reset();
-
-  }
-
-  else {
-
-    result.innerHTML =
-    "Something went wrong!";
-  }
-
-});
-
 
 
 /* =========================
@@ -239,6 +192,63 @@ AOS.init({
 /* =========================
    CONTACT FORM MESSAGE
 ========================= */
+
+
+const form =
+document.getElementById("contactForm");
+
+const result =
+document.getElementById("result");
+
+const submitBtn = form.querySelector('button[type="submit"]');
+
+
+
+form.addEventListener("submit", async function (e) {
+
+  e.preventDefault();
+
+  const formData = new FormData(form);
+    formData.append("access_key", "6ba90db1-22f1-4084-9d3d-dc5bf18814f7");
+
+  result.innerHTML =
+  "Sending...";
+
+
+    const originalText = submitBtn.textContent;
+
+    submitBtn.textContent = "Sending...";
+    submitBtn.disabled = true;
+
+    try {
+        const response = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            body: formData
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+            alert("Success! Your message has been sent.");
+            form.reset();
+        } else {
+            alert("Error: " + data.message);
+        }
+
+    } catch (error) {
+        alert("Something went wrong. Please try again.");
+    } finally {
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+    }
+});
+
+
+
+
+
+
+
 
 const form =
 document.getElementById('contactForm');
