@@ -14,8 +14,8 @@ body{
   touch-action: auto;
   background-color: #222;
 
-}
 
+}
 
 
 
@@ -93,7 +93,7 @@ body{
 
 .navbar-nav .nav-link{
 
-  color: #e9cb47;
+  color: #ccc7b0;
 
   font-size: 17px;
   margin: 0 12px;
@@ -127,8 +127,6 @@ body{
   left: 0;
 
   bottom: -5px;
-
-  background: #c89b3c;
 
   transition: 0.4s;
 }
@@ -2146,6 +2144,7 @@ body{
 }
 
 
+
 /* FIX MOBILE FREEZE */
 
 html,
@@ -2155,7 +2154,6 @@ body{
   position: static !important;
   height: auto !important;
 }
-
 
 
 
