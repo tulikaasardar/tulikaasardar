@@ -53,66 +53,30 @@ window.addEventListener('scroll', () => {
 
 
 
-document.addEventListener("DOMContentLoaded", function () {
+/* =========================
+   MOBILE MENU AUTO CLOSE
+========================= */
 
-  const navbar = document.getElementById("mainNavbar");
+const navLinks =
+document.querySelectorAll('.nav-link');
 
-  /* =========================
-     SHRINK NAVBAR
-  ========================= */
+const navbarCollapse =
+document.querySelector('.navbar-collapse');
 
-  function navbarShrink() {
+navLinks.forEach(link => {
 
-    if (window.scrollY > 50) {
-      navbar.classList.add("scrolled");
-    } else {
-      navbar.classList.remove("scrolled");
+  link.addEventListener('click', () => {
+
+    if(navbarCollapse.classList.contains('show')){
+
+      new bootstrap.Collapse(navbarCollapse).hide();
+
     }
-
-  }
-
-  navbarShrink();
-
-  window.addEventListener("scroll", navbarShrink);
-
-  /* =========================
-     MOBILE MENU CLOSE
-  ========================= */
-
-  const navLinks =
-    document.querySelectorAll(".nav-link");
-
-  const navbarCollapse =
-    document.getElementById("navbarNav");
-
-  const bsCollapse =
-    new bootstrap.Collapse(navbarCollapse, {
-      toggle: false
-    });
-
-  navLinks.forEach(link => {
-
-    link.addEventListener("click", function () {
-
-      if (navbarCollapse.classList.contains("show")) {
-
-        bsCollapse.hide();
-
-        /* REMOVE BLOCKING LAYER */
-
-        document.body.classList.remove("offcanvas-backdrop");
-
-        document.body.style.overflow = "auto";
-
-        document.body.style.touchAction = "auto";
-
-      }
-
-    });
 
   });
 
 });
+
 
 
 
