@@ -2156,12 +2156,6 @@ body{
   height: auto !important;
 }
 
-/* COLLAPSE FIX */
-
-.navbar-collapse{
-  max-height: 80vh;
-  overflow-y: auto;
-}
 
 
 
