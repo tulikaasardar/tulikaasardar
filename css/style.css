@@ -16,11 +16,7 @@ body{
 
 }
 
-html,
-body{
-  overflow: hidden;
-  width: 100%;
-}
+
 
 
 /* =========================
@@ -2148,6 +2144,25 @@ body{
 .form-message{
   display: none;
 }
+
+
+/* FIX MOBILE FREEZE */
+
+html,
+body{
+  overflow-x: hidden;
+  overflow-y: auto !important;
+  position: static !important;
+  height: auto !important;
+}
+
+/* COLLAPSE FIX */
+
+.navbar-collapse{
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
 
 
 
