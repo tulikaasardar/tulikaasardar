@@ -13,9 +13,13 @@ body{
   overflow-x: hidden;
   background-color: #222;
 
-
 }
 
+html,
+body{
+  overflow: hidden;
+  width: 100%;
+}
 
 
 /* =========================
